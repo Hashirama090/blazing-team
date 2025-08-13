@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blazing Team - Pioneering Force</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712; /* A slightly darker gray */
+        }
+        /* Simple transition for page visibility */
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .page.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Custom styles for hero section */
+        .hero-bg {
+            background-color: #111827;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253, 100%, 7%, 1) 0px, transparent 50%),
+                radial-gradient(at 98% 96%, hsla(339, 100%, 21%, 1) 0px, transparent 50%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gray-900/70 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="nav-link text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-red-500" data-page="home">
+                   Blazing Team
+                </a>
+
+                <!-- Desktop Navigation & Menu -->
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#" class="nav-link text-gray-300 hover:text-orange-400 transition-colors duration-300" data-page="iec">iEC</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-orange-400 transition-colors duration-300" data-page="getrolv">Getrolv</a>
+                    </div>
+                    <!-- Menu Icon -->
+                     <button id="menu-btn" class="p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900/95 backdrop-blur-sm z-40">
+        <div class="flex justify-end p-4">
+             <button id="close-menu-btn" class="p-2">
+                <span class="sr-only">Close menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="flex flex-col items-center justify-center h-full -mt-16 space-y-6 text-2xl font-medium">
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="home">Home</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="iec">iEC</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="getrolv">Getrolv</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="quantum">Quantum Blaze</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="goal">Our Goal</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="mission">Mission</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="about">About Us</a>
+            <a href="#" class="nav-link mobile-nav-link text-gray-300 hover:text-orange-400" data-page="contact">Contact Us</a>
+        </nav>
+    </div>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero-bg rounded-lg p-8 md:p-16 text-center min-h-[70vh] flex flex-col justify-center items-center">
+                <h1 class="text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
+                    The Pioneering Force Behind
+                </h1>
+                <div class="mt-4 text-3xl md:text-5xl font-bold">
+                    <a href="#"><span class="nav-link text-orange-400" data-page="getrolv" >Getrolv</span></a>,
+                    <a href="#"><span class="nav-link text-cyan-400" data-page="iec">iEC</span></a>, &amp;
+                    <a href="#"><span class="nav-link text-purple-500" data-page="quantum">Quantum Blaze</span>
+                </div>
+                 <p class="mt-8 max-w-2xl mx-auto text-lg text-gray-300">
+                    Innovating at the intersection of technology, Research, finance, and real estate to build the future. Conglomerate by establishment.
+                </p>
+                <div class="mt-12 glass-card rounded-lg p-6">
+                    <p class="text-xl font-medium text-gray-300">Disbursed by Blazing Team Since Establishment</p>
+                    <p class="text-4xl font-bold text-orange-400 mt-2">NGN 500,000+</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- iEC Page -->
+        <div id="iec" class="page">
+            <div class="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-cyan-400">iEC</h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl">An innovative estate, interior, and agent constant company aimed at creating personalized interaction with customers, providing assistance and quotations.</p>
+                <div class="mt-8 grid md:grid-cols-2 gap-8">
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-xl font-semibold text-white">Key Metrics</h3>
+                        <ul class="mt-4 space-y-3 text-gray-300">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 4+ Customers</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 1 Department</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-cyan-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> NGN 200,000 Revenue</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card rounded-lg p-6 flex flex-col justify-center">
+                        <h3 class="text-xl font-semibold text-white">Get in Touch</h3>
+                        <div class="mt-4 space-y-4">
+                            <a href="/iEC.html" class="block w-full text-center bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">Visit Website</a>
+                            <a href="#" class="nav-link block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-page="contact">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getrolv Page -->
+        <div id="getrolv" class="page">
+             <div class="bg-orange-900/20 border border-orange-500/30 rounded-lg p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-orange-400">Getrolv</h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-3xl">A social media Fintech company where the social world meets the Fintech world. Revolutionizing how you connect and transact.</p>
+                 <div class="mt-8 max-w-md mx-auto">
+                    <div class="glass-card rounded-lg p-6 flex flex-col justify-center">
+                        <h3 class="text-xl font-semibold text-white text-center">Explore Getrolv</h3>
+                        <div class="mt-4 space-y-4">
+                            <a href="/getrolv.html" class="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">Visit Website</a>
+                            <a href="#" class="nav-link block w-full text-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-page="contact">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quantum Blaze Page -->
+        <div id="quantum" class="page">
+            <div class="bg-purple-900/20 border border-purple-500/30 rounded-lg p-8 text-center min-h-[50vh] flex flex-col justify-center items-center">
+                <h2 class="text-4xl font-bold text-purple-500">Quantum Blaze</h2>
+                <p class="mt-4 text-5xl font-extrabold text-white animate-pulse">Coming Soon...</p>
+                <p class="mt-4 text-lg text-gray-300">Preparing to launch our next groundbreaking venture. Stay tuned.</p>
+            </div>
+        </div>
+
+        <!-- Other Pages (Goal, Mission, About, Contact) -->
+        <div id="goal" class="page">
+             <div class="glass-card rounded-lg p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white">Our Goal</h2>
+                <p class="mt-4 text-gray-300 leading-relaxed">Our primary goal is to identify and nurture disruptive ideas, transforming them into successful, market-leading companies that create lasting value and drive technological progress.</p>
+             </div>
+        </div>
+        <div id="mission" class="page">
+            <div class="glass-card rounded-lg p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white">Our Mission</h2>
+                <p class="mt-4 text-gray-300 leading-relaxed">To build and scale a portfolio of innovative companies that challenge the status quo, solve real-world problems, and redefine industries through the power of technology and visionary leadership.</p>
+            </div>
+        </div>
+        <div id="about" class="page">
+            <div class="glass-card rounded-lg p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-white">About Us</h2>
+                <p class="mt-4 text-gray-300 leading-relaxed">Blazing Team is a venture studio and innovation hub. We are a collective of builders, thinkers, and strategists passionate about launching and growing companies that make a significant impact. From fintech to real estate tech, our expertise spans multiple domains, united by a common thread of relentless innovation.</p>
+          <p>We are not just your regular Venture capital company, we are conglomerate. we are........Blazing Team group </p>
+            </div>
+        </div>
+        <div id="contact" class="page">
+            <div class="glass-card rounded-lg p-8 md:p-12 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-white text-center">Contact Us</h2>
+                <p class="text-center text-gray-300 mt-2">We'd love to hear from you. Reach out for partnerships, inquiries, or to say hello.</p>
+                <form class="mt-8 space-y-6">
+                    <div>
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" name="name" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow" placeholder="Your Name">
+                    </div>
+                     <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" name="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow" placeholder="Your Email">
+                    </div>
+                     <div>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea name="message" id="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-md p-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-shadow" placeholder="Your Message"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500">
+            <p>&copy; 2024 Blazing Team. All Rights Reserved.</p>
+            <p>Blazing Team group</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+
+            // Function to switch pages
+            const showPage = (pageId) => {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+                // Scroll to top on page change
+                window.scrollTo(0, 0);
+            };
+
+            // Event listeners for navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    showPage(pageId);
+                    // Close mobile menu if it's open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+            
+            // Close menu if clicking outside of it (on the backdrop)
+            mobileMenu.addEventListener('click', (e) => {
+                if (e.target === mobileMenu) {
+                     mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Set the initial page
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
