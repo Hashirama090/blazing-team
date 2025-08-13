@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getrolv - The Future of the Internet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Simple fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        /* Pop-out animation for FAB menu */
+        @keyframes popOut {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-popOut {
+            animation: popOut 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-hidden h-screen">
+
+    <!-- Page 1: Loading Screen -->
+    <div id="loading-page" class="flex flex-col items-center justify-center h-full w-full fixed top-0 left-0 bg-gray-900 z-50">
+        <div class="text-5xl font-black tracking-wider animate-pulse">getrolv</div>
+        <p class="text-gray-400 mt-2">Loading...</p>
+    </div>
+
+    <!-- Page 2: Welcome Screen -->
+    <div id="welcome-page" class="hidden h-full flex-col justify-between p-8 animate-fadeIn">
+        <!-- Home Icon to Social Media -->
+        <div class="flex justify-end">
+            <button onclick="showPage('social-media-page')" class="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                <i data-lucide="home" class="w-6 h-6 text-gray-300"></i>
+            </button>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="flex flex-col items-center text-center">
+            <h1 class="text-6xl font-black tracking-wider">getrolv</h1>
+            <p class="mt-4 text-lg text-gray-300">Welcome to the internet of the future</p>
+        </div>
+        
+        <!-- Sign Up / Sign In -->
+        <div class="flex items-center justify-center space-x-6">
+            <div class="flex flex-col items-center space-y-2 cursor-pointer group">
+                <div class="p-4 bg-gray-800 rounded-full border border-gray-700 group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="user-plus" class="w-8 h-8 text-gray-300"></i>
+                </div>
+                <span class="text-sm text-gray-400">Sign Up</span>
+            </div>
+            <div class="flex flex-col items-center space-y-2 cursor-pointer group">
+                <div class="p-4 bg-gray-800 rounded-full border border-gray-700 group-hover:bg-indigo-600 transition-colors duration-300">
+                    <i data-lucide="log-in" class="w-8 h-8 text-gray-300"></i>
+                </div>
+                <span class="text-sm text-gray-400">Sign In</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3: Social Media Page -->
+    <div id="social-media-page" class="hidden h-full flex-col animate-fadeIn">
+        <!-- Header -->
+        <header class="flex-shrink-0 p-4 flex items-center justify-between border-b border-gray-700">
+             <button onclick="showPage('welcome-page')" class="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                <i data-lucide="arrow-left" class="w-6 h-6 text-gray-300"></i>
+            </button>
+            <h2 class="text-2xl font-bold">Social Feed</h2>
+            <div class="w-10"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Top Navigation -->
+        <nav class="flex-shrink-0 flex justify-around p-4 bg-gray-900/80 backdrop-blur-sm border-b border-gray-700">
+            <a href="#" class="font-semibold text-indigo-400 border-b-2 border-indigo-400 pb-2">News</a>
+            <a href="#" class="font-semibold text-gray-400 hover:text-white">Post</a>
+            <a href="#" class="font-semibold text-gray-400 hover:text-white">Reel</a>
+            <a href="#" class="font-semibold text-gray-400 hover:text-white">Jobs</a>
+        </nav>
+
+        <!-- Content Area (Scrollable) -->
+        <main class="flex-grow overflow-y-auto p-4 no-scrollbar pb-32">
+            <!-- Placeholder Content -->
+            <div class="space-y-4">
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-bold">Tech Breakthrough Announced</h3>
+                    <p class="text-gray-400 mt-2 text-sm">A new era of computing begins today with the launch of quantum processors available to the public...</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-bold">User Post: My Trip to the Mountains</h3>
+                    <img src="https://placehold.co/600x300/1f2937/9ca3af?text=Mountain+View" class="mt-2 rounded-lg w-full h-auto" alt="Mountain View">
+                </div>
+                 <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-bold">New Job Opening: UI/UX Designer</h3>
+                    <p class="text-gray-400 mt-2 text-sm">We're looking for a creative designer to join our team. Apply now!</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg">
+                    <h3 class="font-bold">Reel: A Day in the Life</h3>
+                    <div class="mt-2 rounded-lg w-full h-64 bg-black flex items-center justify-center">
+                        <i data-lucide="play-circle" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Floating Action Button (FAB) -->
+        <div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <!-- FAB Menu (Initially Hidden) -->
+            <div id="fab-menu" class="hidden absolute bottom-full mb-4 left-1/2 -translate-x-1/2 flex items-center gap-4 animate-popOut">
+                <!-- MODIFIED: Removed Home and Video icons -->
+                <button class="fab-menu-item bg-gray-700 p-3 rounded-full shadow-lg hover:bg-indigo-500 transition-all transform hover:-translate-y-1">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </button>
+                <button onclick="showPage('menu-page')" class="fab-menu-item bg-gray-700 p-3 rounded-full shadow-lg hover:bg-indigo-500 transition-all transform hover:-translate-y-1">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Main FAB Button -->
+            <button id="fab-main" onclick="toggleFabMenu()" class="bg-indigo-600 text-white p-4 rounded-full shadow-lg hover:bg-indigo-500 focus:outline-none transition-transform transform hover:scale-110">
+                <i id="fab-icon" data-lucide="plus" class="w-8 h-8 transition-transform duration-300"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Page 4: Menu/Dashboard -->
+    <div id="menu-page" class="hidden h-full flex-col animate-fadeIn">
+         <!-- Header -->
+        <header class="flex-shrink-0 p-4 flex items-center justify-between border-b border-gray-700">
+             <button onclick="showPage('social-media-page')" class="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
+                <i data-lucide="arrow-left" class="w-6 h-6 text-gray-300"></i>
+            </button>
+            <h2 class="text-2xl font-bold">Menu</h2>
+            <div class="w-10"></div> <!-- Spacer -->
+        </header>
+
+        <!-- Content Area (Scrollable) -->
+        <main class="flex-grow overflow-y-auto no-scrollbar">
+            <!-- Profile Dashboard -->
+            <div class="p-6 bg-gray-800/50">
+                <h3 class="text-sm font-semibold text-gray-400 mb-4">ACCOUNT PROFILE DASHBOARD</h3>
+                <div class="flex items-center space-x-4">
+                    <img src="https://placehold.co/80x80/4f46e5/ffffff?text=U" class="w-20 h-20 rounded-full border-2 border-indigo-500" alt="User Avatar">
+                    <div>
+                        <p class="text-xl font-bold">Your Name</p>
+                        <p class="text-xs text-gray-400 mt-1">UID: 123-456-7890</p>
+                        <p class="text-xs text-gray-400">RID: 987-654-3210</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu List -->
+            <div class="p-2">
+                <ul class="space-y-1">
+                    <li class="menu-item"><i data-lucide="user-circle" class="w-5 h-5 mr-4 text-gray-400"></i>Account</li>
+                    <li class="menu-item"><i data-lucide="credit-card" class="w-5 h-5 mr-4 text-gray-400"></i>Upay</li>
+                    <li class="menu-item"><i data-lucide="file-text" class="w-5 h-5 mr-4 text-gray-400"></i>Tca</li>
+                    <li class="menu-item"><i data-lucide="briefcase" class="w-5 h-5 mr-4 text-gray-400"></i>Virtual Business Space</li>
+                    <li class="menu-item"><i data-lucide="gem" class="w-5 h-5 mr-4 text-gray-400"></i>Premium</li>
+                    <li class="menu-item"><i data-lucide="shield" class="w-5 h-5 mr-4 text-gray-400"></i>Security and Privacy</li>
+                    <li class="menu-item"><i data-lucide="settings" class="w-5 h-5 mr-4 text-gray-400"></i>Settings</li>
+                    <li class="menu-item"><i data-lucide="search" class="w-5 h-5 mr-4 text-gray-400"></i>Jobs</li>
+                    <li class="menu-item"><i data-lucide="activity" class="w-5 h-5 mr-4 text-gray-400"></i>Activity</li>
+                    <li class="menu-item"><i data-lucide="palette" class="w-5 h-5 mr-4 text-gray-400"></i>Color</li>
+                    <li class="menu-item"><i data-lucide="help-circle" class="w-5 h-5 mr-4 text-gray-400"></i>Help Center</li>
+                    <li class="menu-item text-red-400"><i data-lucide="log-out" class="w-5 h-5 mr-4"></i>Sign Out</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+        // --- Icon Initialization ---
+        lucide.createIcons();
+
+        // --- Page Navigation Logic ---
+        const pages = ['loading-page', 'welcome-page', 'social-media-page', 'menu-page'];
+        let currentPage = 'loading-page';
+
+        function showPage(pageId) {
+            // Hide the FAB menu if it's open when changing pages
+            const fabMenu = document.getElementById('fab-menu');
+            if (!fabMenu.classList.contains('hidden')) {
+                toggleFabMenu();
+            }
+
+            pages.forEach(page => {
+                const el = document.getElementById(page);
+                if (page === pageId) {
+                    el.classList.remove('hidden');
+                    el.classList.add(page === 'social-media-page' || page === 'menu-page' ? 'flex' : 'flex'); // Use flex for layout
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+            currentPage = pageId;
+        }
+
+        // --- Initial Loading Sequence ---
+        window.onload = () => {
+            setTimeout(() => {
+                const loadingPage = document.getElementById('loading-page');
+                loadingPage.style.transition = 'opacity 0.5s ease-out';
+                loadingPage.style.opacity = '0';
+                setTimeout(() => {
+                    showPage('welcome-page');
+                }, 500); // Wait for fade out to finish
+            }, 5000); // 5-second loading screen
+        };
+
+        // --- Floating Action Button (FAB) Logic ---
+        let isFabMenuOpen = false;
+        const fabMenu = document.getElementById('fab-menu');
+        const fabMain = document.getElementById('fab-main');
+        const fabIcon = document.getElementById('fab-icon');
+
+        function toggleFabMenu() {
+            isFabMenuOpen = !isFabMenuOpen;
+            if (isFabMenuOpen) {
+                fabMenu.classList.remove('hidden');
+                fabIcon.classList.add('rotate-45');
+            } else {
+                fabMenu.classList.add('hidden');
+                fabIcon.classList.remove('rotate-45');
+            }
+        }
+        
+        // --- Utility to apply common classes to menu items ---
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.classList.add(
+                'flex', 'items-center', 'p-4', 'rounded-lg', 'hover:bg-gray-800',
+                'cursor-pointer', 'transition-colors', 'duration-200', 'font-medium'
+            );
+        });
+
+    </script>
+</body>
+</html>

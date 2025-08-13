@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iEC - Convenience at your disposal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom styles for the menu transition */
+        #menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        #menu.hidden {
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Splash Screen (Page 1) -->
+    <div id="splash-screen" class="fixed inset-0 bg-white flex flex-col justify-center items-center z-50">
+        <div class="text-center">
+            <h1 class="text-6xl md:text-8xl font-bold text-gray-800">iEC</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mt-4">convenience at your disposal.</p>
+        </div>
+    </div>
+
+    <!-- Main Content (Page 2) -->
+    <div id="main-content" class="hidden">
+        <header class="bg-white shadow-md fixed w-full top-0 z-40">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <!-- Menu Icon -->
+                <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+                <h1 class="text-2xl font-bold text-gray-800">iEC</h1>
+                <!-- A placeholder to balance the flex container -->
+                <div class="w-6"></div>
+            </div>
+        </header>
+  <!-- Footer -->
+    <footer class="bg-gray-900/50 border-t border-gray-800 mt-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500">
+            <p>&copy; 2024 Blazing Team. All Rights Reserved.</p>
+            <p>Blazing Team group</p>
+        </div>
+    </footer>
+
+        <!-- Side Navigation Menu -->
+        <div id="menu" class="fixed inset-0 flex z-50 hidden">
+            <!-- Overlay -->
+            <div id="menu-overlay" class="fixed inset-0 bg-black opacity-50"></div>
+            
+            <!-- Menu Content -->
+            <div class="relative w-64 bg-white h-full shadow-lg p-6">
+                 <button id="close-menu-btn" class="absolute top-4 right-4 text-gray-600 hover:text-gray-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                <nav class="mt-10">
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Home</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">News Feed</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Rent/Own an Apartment</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Interiors</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Authentication</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Track Your Days</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Personalized Assistance</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Logistics</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Help Center</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">About Us</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200">Contact Us</a>
+                    <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-200 font-semibold text-blue-600">Sign In/Out</a>
+                </nav>
+            </div>
+        </div>
+
+
+        <!-- Hero Section -->
+        <main class="pt-24 pb-12">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Welcome to iEC</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    An innovative estate, interior and agent constant company, bringing convenience to your door step.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="w-full sm:w-auto bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">Sign Up</button>
+                    <button class="w-full sm:w-auto bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-gray-800 transition duration-300">Sign Up</button>
+                    <button class="w-full sm:w-auto bg-green-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-green-600 transition duration-300">Rent/Own an Apartment</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- News Feed Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-6">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">News Feed</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Sample News Item 1 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1638454668466-e8dbd5462f20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4dXJpb3VzJTIwYXBhcnRtZW50fGVufDB8fDB8fHww" alt="luxurious apartment">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl mb-2">New Luxury Apartments Available</h4>
+                            <p class="text-gray-700 mb-4">Discover our latest collection of high-end apartments in the city center. Pre-book now for exclusive offers.</p>
+                            <a href="#" class="text-blue-600 font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Sample News Item 2 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior design">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl mb-2">Top 5 Interior Design Trends for 2025</h4>
+                            
+                            <p class="text-gray-700 mb-4">Our experts share the top trends to make your space feel modern, comfortable, and uniquely yours.</p>
+                            <a href="#" class="text-blue-600 font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Sample News Item 3 -->
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/857146092/photo/sea-of-hands.webp?a=1&b=1&s=612x612&w=0&k=20&c=xQJrho_zpn7Oa7bcf0wiJXjWsXGz-R-mYGT1GBRDPFE=" alt="community gathering">
+                        <div class="p-6">
+                            <h4 class="font-bold text-xl mb-2">iEC Community Meetup Announced</h4>
+                            <p class="text-gray-700 mb-4">Join us for our annual community event. A great opportunity to network with neighbors and the iEC team.</p>
+                            <a href="#" class="text-blue-600 font-semibold hover:underline">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // --- Splash Screen Logic ---
+        // This function hides the splash screen and shows the main content after a delay.
+        window.addEventListener('load', () => {
+            const splashScreen = document.getElementById('splash-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            // Set a timer for 3 seconds (3000 milliseconds)
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+                mainContent.classList.remove('hidden');
+            }, 3000);
+        });
+
+        // --- Menu Toggle Logic ---
+        // This handles opening and closing the side navigation menu.
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+        }
+
+        // Event listeners to open and close the menu
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+
+
+    </script>
+</body>
+</html>
